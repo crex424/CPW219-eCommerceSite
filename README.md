@@ -1,5 +1,11 @@
 # CPW219-eCommerceSite
 
+![Bitbucket open issues](https://img.shields.io/github/issues/crex424/CPW219-eCommerceSite?style=plastic)
+![Bitbucket open issues](https://img.shields.io/github/issues-closed/crex424/CPW219-eCommerceSite?style=plastic)
+
+![Bitbucket open pull requests](https://img.shields.io/github/issues-pr/crex424/CPW219-eCommerceSite?style=plastic)
+![Bitbucket open pull requests](https://img.shields.io/github/issues-pr-closed/crex424/CPW219-eCommerceSite?style=plastic)
+
 ## Project purpose
 The purpose of this project is to create a website for users to be able to 
 access our game roster and gain information on them as well as purchase them.
