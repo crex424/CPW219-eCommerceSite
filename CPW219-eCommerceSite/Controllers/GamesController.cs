@@ -14,12 +14,24 @@ namespace CPW219_eCommerceSite.Controllers
             _context = context;
         }
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int? id)
         {
-            // Get all games from the DB
-            //List<Game> games = _context.Games.ToList();
+            const int NumGamesToDisplayPerPage = 3;
+            const int PageOffset = 1; // need a page offset to use current page/figure out num games to display
+
+            int currPag = id ?? 1; // set current page to id if it has a value, otherwise use 1
+
+            // Commented out method syntax version, same code below as query syntax
+            //List<Game> games = _context.Games
+            //                           .Skip(NumGamesToDisplayPerPage * (currPag - PageOffset))
+            //                           .Take(NumGamesToDisplayPerPage)
+            //                           .ToList();
+
             List<Game> games = await (from game in _context.Games
-                                      select game).ToListAsync();
+                                      select game)
+                                      .Skip(NumGamesToDisplayPerPage * (currPag - PageOffset))
+                                      .Take(NumGamesToDisplayPerPage)
+                                      .ToListAsync();
 
             // Show them on the page
             return View(games);
@@ -87,7 +99,7 @@ namespace CPW219_eCommerceSite.Controllers
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             Game gameToDelete = await _context.Games.FindAsync(id);
-
+            // If a game is selected to be deleted, delete game.
             if (gameToDelete != null)
             {
                 _context.Games.Remove(gameToDelete);
