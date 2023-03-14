@@ -14,6 +14,9 @@ access our game roster and gain information on them as well as purchase them.
 ### Visual Studio 2022 with
 - ASP.NET and web development installed
 - Sql server data tools installed
+### Run in Package Manager Console
+- Add-Migration 
+- Update-Database
 
 ## Useful links for information
 - [ASP.NET MVC](https://learn.microsoft.com/en-us/aspnet/mvc/overview/getting-started/introduction/getting-started)
